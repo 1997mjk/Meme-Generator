@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <title>CIS 197 Final Project</title>
+    <script src="/static/scripts/lib/jquery.min.js"></script>
+    <script src="/static/scripts/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/styles/styles.css"/>
+  </head>
+  <body>
+    <div class="nav">
+      <h2>Meme Generator</h2>
+
+    </div>
+    <div class="main-body">
+      <div class="left-col">
+      <% if (user) { %>
+      <p>Hi <%= user %> | 
+      <a href="/account/logout">Log out</a>
+      </p>
+      <% } else { %>
+      <a class="btn" href="/account/login">Log in</a>
+      <a class="btn" href="/account/login">Sign up</a>
+      <% } %>
+      <ul id="memes">
+      </ul>
+      </div>
+
+
+      <div class="right-col">
+        <div id="show-meme" style="display:none">
+            <div id="meme-info">
+              <p id="meme"></p>
+            </div>
+            <br/><br/>
+            <% if (user) { %>
+            <div><textarea id="memeArea"></textarea><button class="btn" id="memeText">Create Text</button></div>
+            
+            <!-- <a class="btn" type="submit" id="submitAnswer">Export</a> -->
+            <% } %>
+        </div>
+      </div>
+      
+    </div>
+  </body>
+</html>
