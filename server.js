@@ -7,7 +7,6 @@ var isAuthenticated = require('./middlewares/isAuthenticated.js');
 var Question = require('./models/question.js');
 var Meme = require('./models/meme.js');
 var accountRouter = require('./routes/account.js');
-var apiRouter = require('./routes/api.js');
 var app = express();
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/project')
 
@@ -39,6 +38,11 @@ app.get('/', function (req, res, next) {
   })
 });
 
+app.get('/textMeme', function (req, res) {
+  res.render('textMeme')
+})
+
+
 
 app.post('/', function (req, res, next) {
   var questionText = req.body.question;
@@ -55,8 +59,6 @@ app.post('/', function (req, res, next) {
 
 app.use('/account', accountRouter)
 
-// TODO: Mount api routes at '/api' prefix
-app.use('/api', apiRouter)
 
 // don't put any routes below here!
 app.use(function (err, req, res, next) {

@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>CIS 197 Final Project</title>
+    <script src="/static/scripts/lib/jquery.min.js"></script>
+    <script src="/static/scripts/textChanger.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/styles/textMeme.css"/>
+  </head>
+  <body>
+    <div class="nav">
+      <h2>Fullwidth Text Generator</h2>
+    </div>
+    <div class="main-body">
+      <span style="font-size:25px">Type your text here:</span>
+      <br/>
+      <textarea id="input"></textarea>
+      <br/>
+      <br/>
+      <span>
+        <button onClick="getText(input, output)">Convert to Fullwidth</button>
+        <button onClick="randomCapitalization(input, output)">Convert to Radom Capitalization</button>
+      </span>
+      <br/>
+      <br/>
+      <span style="font-size:25px">Converted Text:</span>
+      <textarea id=output></textarea>
+    </div>
+  </body>
+</html>
